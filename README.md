@@ -1,2 +1,3 @@
 # pete-docs
-Just some docs I wrote
+
+Just some docs I wrote. Feel free to browse.
