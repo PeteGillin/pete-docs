@@ -2,7 +2,7 @@
 
 ---
 
-## Here is a slide
+## This is just here to show that reveal.js works
 
 - First
 - Second
@@ -27,6 +27,21 @@ Note: Speaker notes are handy
 
 ---
 
+## How much can we get on a slide?
+
+1. Thing one
+1. Thing
+1. Thing
+1. Thing
+1. Thing
+1. Thing
+1. Thing
+1. Thing
+1. Thing
+1. Thing ten — max with a heading (for me)
+
+---
+
 1. Thing one
 1. Thing
 1. Thing
@@ -39,7 +54,7 @@ Note: Speaker notes are handy
 1. Thing
 1. Thing
 1. Thing
-1. Thing thirteen, seems to be the limit
+1. Thing thirteen — max with no heading (for me)
 
 ---
 
@@ -50,9 +65,9 @@ package com.example;
 
 public class Demo {
 
-    public static void main(String[] args) {
-        System.out.println("Hello world");
-    }
+  public static void main(String[] args) {
+    System.out.println("Hello world");
+  }
 }
 ```
 
