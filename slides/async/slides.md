@@ -827,7 +827,51 @@ follow-up task is executed synchronously on the calling thread instead.
 
 ---
 
-TODO: Reactor
+## Reactor
+
+Can use Reactor's `Mono` instead of the JDK's `CompletableFuture`.
+
+---
+
+Here are our interfaces using `Mono`...
+
+---
+
+```java
+interface FooRest {
+  Mono<BarDto> fooToBar(FooDto fooDto);
+}
+
+interface FooBackend {
+  Mono<Bar> fooToBar(Foo foo);
+}
+```
+
+---
+
+...and here's the implementation of the REST layer...
+
+---
+
+```java
+public Mono<BarDto> fooToBar(FooDto fooDto) {
+  Foo fooBackend = dtoToBackend(fooDto);
+  return backend
+    .fooToBar(fooBackend)
+    .map(Converter::backendToDto);
+}
+```
+
+---
+
+## So, is a `Mono` just like a fancy `CompletableFuture`?
+
+- Kinda.
+- Sorta.
+- But not really.
+
+---
+
 TODO: CF vs Reactor
 
 ---
