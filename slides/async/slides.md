@@ -458,13 +458,159 @@ it has to block the calling thread.
 
 ## Threadpool best practice
 
-TODO: split fast and slow
-TODO: define fast and slow
-TODO: terminological inexactitude
-TODO: split slow according to scaling needs
-TODO: bounded elastic vs fixed
-TODO: guide for sizing, non-blocking and blocking
-TODO: avoiding deadlock
+---
+
+## How many threadpools do you need?
+
+- Segregate fast and slow tasks.
+  - Avoids slow tasks starving out fast ones.
+- Consider segregating different classes of slow task.
+  - Can scale each appropriately.
+- Never block on a task scheduled in your own threadpool.
+  - Segregate parent and child tasks.
+- Sometimes just cleaner for components to own their own threadpools.
+
+Note: We covered the first point already. We'll cover the second and third
+points later.
+
+---
+
+## What are 'fast' and 'slow' tasks?
+
+- Slow:
+  - Most blocking operations, esp. network I/O.
+  - Anything sufficiently computationally intensive.
+- Fast:
+  - Anything else.
+  - Includes logging.
+
+Note:
+
+- There's no firm definition of 'sufficiently computationally intensive'.
+- Logging could technically be blocking, depending on the configuration.
+
+---
+
+## Terminological inexactitude
+
+It is common to use the terms 'blocking' and 'non-blocking' instead of 'slow'
+and 'fast' — even when this isn't technically accurate.
+
+---
+
+We'll do the same from now on.
+
+---
+
+## Aside on computationally intensive tasks
+
+- Will often move these off our server and into a worker pool.
+- Now the server is just waiting for a response — which really is blocking.
+
+---
+
+## What type of threadpool should I use?
+
+That depends on what it's doing.
+
+---
+
+## Bounded elastic threadpools
+
+- For work in response to variable load.
+  - Add more threads when under load...
+  - ...up to some upper bound.
+  - Stop threads when idle...
+  - ...down to some lower bound.
+    - (Avoids cold starts.)
+- Includes most server work.
+
+---
+
+## Fixed threadpools
+
+- For when you just want to plough through work.
+- More common for batch processors.
+
+---
+
+## What size of threadpool should I use?
+
+Again, that depends on what it's doing.
+
+---
+
+## Sizing non-blocking threadpools
+
+- Scale with number of cores.
+  - Threads will be runnable all/most of the time.
+  - Avoid too much overhead from preemption.
+- What scaling factor?
+  - Depends.
+  - At first, pick something reasonable.
+  - Fine-tune later, when you have enough load to experiment.
+- Again, keep an eye on the memory usage.
+
+---
+
+## Sizing blocking threadpools
+
+- Normally no need to scale with number of cores.
+  - Threads will be sleeping most of the time.
+- Often associated with some kind of resource.
+  - Example: Each thread has a database connection.
+  - Thread pool size determines number of concurrent connections.
+- Again, keep an eye on the memory usage.
+
+---
+
+## Avoiding deadlock
+
+Never block on a task scheduled in your own threadpool.
+
+---
+
+- Suppose some kind of request triggers a 'parent' task...
+- ...And each 'parent' tasks schedules a 'child' task and then blocks until it's
+  complete...
+- ...And the 'parent' and 'child' tasks are scheduled on the same threadpool.
+
+---
+
+- We get a burst of requests which need slow database access.
+- They're arriving faster than we can handle them!
+- The threadpool gets filled with 'parent' tasks.
+- The 'child' tasks go to the back of the executor's work queue.
+
+---
+
+- The 'parent' tasks can't complete until the 'child' tasks do.
+- But the 'child' tasks can't even start while the 'parent' tasks are filling
+  the threadpool.
+- DEADLOCK!
+
+---
+
+Solution: Use a different threadpool for the 'parent' and 'child' tasks.
+
+---
+
+Also need to avoid longer dependency chains — don't schedule 'grandparent' and '
+grandchild' tasks in same threadpool, and so on.
+
+---
+
+The deadlock danger only applies if you one thread is waiting for another to
+complete (blocking style).
+
+---
+
+It's always safe to hand over execution to continue on another thread (async
+style).
+
+---
+
+(This is one reason to avoid blocking where possible.)
 
 ---
 
