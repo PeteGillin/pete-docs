@@ -346,12 +346,104 @@ the next request.
 
 ---
 
-TODO: parallelization in a blocking world
-TODO: parallelization in a blocking world (fancy version)
-TODO: parallelization in an async world
+## Parallelizing tasks in a blocking
 
-TODO: select magic
-TODO: multiplexing
+- Start each task on its own thread.
+- Wait for all tasks to be complete.
+- Combine the results and continue execution on the calling thread.
+- Bad: One thread is just blocked waiting for other threads.
+- Can be fiddly to code.
+
+---
+
+## Parallelizing tasks in a blocking v2
+
+- Could do one of the tasks on the calling thread instead of a new thread.
+- Then have to wait for all other tasks to be complete.
+- Bad: One thread is still just blocked waiting for other threads.
+  - Unless we correctly pick the slowest task.
+- More fiddly to code.
+
+---
+
+## Parallelizing tasks in an async world
+
+- Start each task on its own thread.
+- Calling thread returns.
+- Tasks save their results as they complete.
+- Combine the results and continue execution on whichever thread finishes last.
+- Good: No unnecessary blocking.
+- Most async frameworks make this easy.
+
+---
+
+## Can we avoid blocking a thread per task?
+
+Sometimes, yes!
+
+---
+
+Suppose we're implementing a client library for talking to a backend.
+
+---
+
+## Blocking client library
+
+- Open socket to backend.
+- Send request.
+- Wait for response.
+- Close socket.
+- Return response.
+
+---
+
+## Async client library.
+
+- On calling thread:
+  - Open socket to backend.
+  - Send request.
+- On a single background thread:
+  - Wait for responses from _any_ of the open sockets.
+  - Hands off work to another threadpool.
+- On that other threadpool:
+  - Close socket.
+  - Invoke callback, passing in response.
+
+---
+
+Waiting for responses from any of the open sockets is done using the `select`
+system call — exists for exactly this purpose.
+
+---
+
+Can't do this with a blocking client API — that has to return the response, so
+it has to block the calling thread.
+
+---
+
+- Blocking client library:
+  - One thread blocked for each concurrent request.
+- Async client library:
+  - One thread blocked _in total_.
+  - Only start a thread to handle each response when it's available.
+
+---
+
+## Or, even better...
+
+- Instead of opening a socket for each request...
+- ...multiplex many requests over one connection...
+- ...if your protocol supports this.
+- Example: gRPC does this over HTTP/2.
+
+---
+
+## So, why async?
+
+- Allows decision to transfer execution to a different thread pool be made at
+  the appropriate layer of the system.
+- Makes parallelizing tasks easier and more efficient.
+- Enables client libraries which don't block a thread per concurrent request.
 
 ---
 
