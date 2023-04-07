@@ -769,5 +769,14 @@ TODO: Reactor
 
 ---
 
+TODO: Terminology: Sync, blocking, async
+TODO: Calling async from sync
+TODO: Calling blocking from async
+TODO: Calling non-blocking sync from async - okay!
+TODO: Avoid async parameters
+TODO: Avoid going async early
+
+---
+
 ## Reactor fundamentals
 
