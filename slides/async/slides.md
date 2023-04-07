@@ -760,7 +760,73 @@ Note: Remember that we need to ensure that a callback is invoked _exactly once_.
 
 ---
 
-TODO: CF
+## So what can we use instead of callbacks?
+
+- Some kind of async framework.
+- We'll consider two:
+  - `CompletableFuture`
+  - Reactor
+
+---
+
+## `CompletableFuture`
+
+- A 'handle' on a task being done on another thread.
+- Use `then*` methods (among others) to schedule a follow-up task to be done on
+  the same thread.
+  - (Normally — see later.)
+
+---
+
+Here are our interfaces using `CompletableFuture`...
+
+---
+
+```java
+interface FooRest {
+  CompletableFuture<BarDto> fooToBar(FooDto fooDto);
+}
+
+interface FooBackend {
+  CompletableFuture<Bar> fooToBar(Foo foo);
+}
+```
+
+---
+
+...and here's the implementation of the REST layer...
+
+---
+
+```java
+public CompletableFuture<BarDto> fooToBar(FooDto fooDto) {
+  Foo fooBackend = dtoToBackend(fooDto);
+  return backend
+    .fooToBar(fooBackend)
+    .thenApply(Converter::backendToDto);
+}
+```
+
+---
+
+Simple!
+
+---
+
+_And_ errors are propagated automatically.
+
+---
+
+Why did we say that `then*` methods _normally_ schedule a follow-up task to be
+done on the same thread?
+
+---
+
+If you call `then*` on a `CompletableFuture` which has already completed, the
+follow-up task is executed synchronously on the calling thread instead.
+
+---
+
 TODO: Reactor
 TODO: CF vs Reactor
 
