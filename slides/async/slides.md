@@ -30,7 +30,7 @@ Let's build a server in Java — from scratch!
 
 ---
 
-(&#128072; Never do this.)
+(👈 Never do this.)
 
 ---
 
@@ -615,6 +615,153 @@ style).
 ---
 
 ## Async API choices in Java
+
+---
+
+## Callbacks are easy to understand...
+
+...Why don't we just use them?
+
+---
+
+Using callbacks across multiple layers of the stack gets very messy very
+quickly.
+
+---
+
+Suppose we're implementing an REST method which just calls out to a backend,
+converting some types along the way.
+
+---
+
+First, let's look at a blocking version.
+
+---
+
+Here are the interfaces...
+
+---
+
+```java
+interface FooRest {
+  BarDto fooToBar(FooDto fooDto);
+}
+
+interface FooBackend {
+  Bar fooToBar(Foo foo);
+}
+```
+
+---
+
+...and here's the implementation of the REST layer...
+
+---
+
+```java
+public BarDto fooToBar(FooDto fooDto) {
+  Foo backendFoo = dtoToBackend(fooDto);
+  Bar backendBar = backend.fooToBar(backendFoo);
+  return backendToDto(backendBar);
+}
+```
+
+---
+
+Now, let's look at a callback-based version.
+
+---
+
+Here are the interfaces...
+
+---
+
+```java
+interface FooRest {
+  void fooToBar(FooDto fooDto, Consumer<BarDto> callback);
+}
+
+interface FooBackend {
+  void fooToBar(Foo foo, Consumer<Bar> callback);
+}
+```
+
+---
+
+...and here's the implementation of the REST layer...
+
+---
+
+```java
+public void fooToBar(FooDto fooDto, Consumer<BarDto> callback) {
+  Foo fooBackend = dtoToBackend(fooDto);
+  backend.fooToBar(
+    fooBackend,
+    barBackend -> {
+      BarDto barDto = backendToDto(barBackend);
+      callback.accept(barDto);
+    });
+}
+```
+
+---
+
+Wrapping the callback in a callback is ugly — and that's a really simple
+example.
+
+---
+
+## Callbacks and error-handling
+
+- Callbacks need to be able to accept errors.
+- So that if something goes wrong, we can e.g. return a 500 to the user and
+  close the socket — rather than leaving the caller waiting.
+- Need to ensure that a callback is invoked _exactly once_.
+
+---
+
+Here are some interfaces with error-handling callbacks...
+
+---
+
+```java
+interface FooRest {
+  void fooToBar(
+    FooDto fooDto, BiConsumer<BarDto, Exception> callback);
+}
+
+interface FooBackend {
+  void fooToBar(Foo foo, BiConsumer<Bar, Exception> callback);
+}
+```
+
+---
+
+...and here's the implementation of the REST layer...
+
+---
+
+```java
+public void fooToBar(
+    FooDto fooDto, BiConsumer<BarDto, Exception> callback) {
+  // 😱 REDACTED 😱
+}
+```
+
+---
+
+Haha, nope.
+
+---
+
+You can try implementing that yourself if you like.
+
+Note: Remember that we need to ensure that a callback is invoked _exactly once_.
+
+---
+
+TODO: CF
+TODO: Reactor
 
 ---
 
