@@ -324,7 +324,16 @@ while (true) {
 
 Once the async `handle` method has been called, the decision whether to do
 everything on the calling thread or to transfer execution to another thread (or
-threads!) is made by the `Handler` (or by code the `Handler` calls out to).
+threads!) is made by the `Handler`...
+
+---
+
+...or by code that the `Handler` calls out to.
+
+---
+
+For example, we can move to another thread at the point in the stack where we do
+a blocking call to some backend.
 
 ---
 
@@ -333,12 +342,12 @@ on.
 
 ---
 
-Once it has invoked the async method, the calling thread is freed up to handle
-the next request.
+Once execution has been transferred to another thread, the calling thread is
+freed up to handle the next request.
 
 ---
 
-## Thread... or threads?
+## Hang on: Thread... or threads?
 
 - Async APIs make it easy to do multiple blocking calls in parallel.
 - Example: If joining results from two backends, make both calls in parallel.
