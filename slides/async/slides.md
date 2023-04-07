@@ -872,7 +872,63 @@ public Mono<BarDto> fooToBar(FooDto fooDto) {
 
 ---
 
-TODO: CF vs Reactor
+## `CompletableFuture` and `ExecutorService`
+
+- Use `ExecutorService.submit()` to schedule a task on a threadpool.
+- That returns a `CompletableFuture`.
+  - (C.f. `Executor.execute()`, which returns nothing.)
+- Use the `CompletableFuture` to interact with the already-running task,
+  schedule follow-up tasks, and so on.
+
+---
+
+## Reactor
+
+Combines functionality similar to that of `ExecutorService`
+and `CompletableFuture` in a unified framework.
+
+---
+
+That is, its programming model encompasses both scheduling tasks and
+manipulating downstream processing.
+
+---
+
+## `Mono`
+
+- Use e.g. `Mono.fromSupplier()` to start a reactive chain.
+- No threads are started at this point, and your `Supplier` is not invoked.
+- Use methods to add more steps to the chain.
+- Use e.g. `scheduleOn()` to specify the threadpool to use.
+- Use e.g. `subscribe()` to terminate the reactive chain.
+- Subscribing to the chain kicks everything off.
+
+---
+
+More on all this later!
+
+---
+
+The weird caveat with `CompletableFuture`, where `then*` tasks may be executed
+on the calling thread, doesn't apply here.
+
+---
+
+This is because the entire chain is assembled before any work is scheduled.
+
+---
+
+## Benefits of Reactor
+
+- Programming model is more powerful and more predictable.
+
+TODO: More
+
+---
+
+## Downsides of Reactor
+
+TODO: More
 
 ---
 
