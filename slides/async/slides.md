@@ -762,6 +762,7 @@ Note: Remember that we need to ensure that a callback is invoked _exactly once_.
 
 TODO: CF
 TODO: Reactor
+TODO: CF vs Reactor
 
 ---
 
