@@ -955,12 +955,136 @@ This is because the entire chain is assembled before any work is scheduled.
 
 ---
 
-TODO: Terminology: Sync, blocking, async
-TODO: Calling async from sync
-TODO: Calling blocking from async
-TODO: Calling non-blocking sync from async - okay!
-TODO: Avoid async parameters
-TODO: Avoid going async early
+## Terminology
+
+- Synchronous API:
+  - Methods return when their work is done.
+- Async API:
+  - Methods return while work is continuing on another thread.
+- Blocking API:
+  - Methods perform blocking operations on the calling thread.
+
+---
+
+Blocking APIs are a subset of synchronous APIs (pretty much).
+
+---
+
+It would be weird to have a async API which blocks the calling thread...
+
+Note: After all, the main reason to go to the trouble of making an API
+asynchronous is to move blocking work off the calling thread.
+
+---
+
+...But obviously not all methods do blocking work.
+
+Note: In fact, most methods are synchronous and non-blocking.
+
+---
+
+## Calling an async method from a synchronous context
+
+- Need to block the calling thread until the work is complete.
+  - Because this method can't return until it is, by definition.
+- One thread tied up just waiting on another thread.
+- Need to be careful with threadpools to avoid deadlock.
+- Avoid where possible!
+
+---
+
+## Calling a blocking method from an async context
+
+- Need to schedule operation on another thread.
+  - Because we don't want to do blocking work on the calling thread.
+- Costs us an extra thread.
+- Avoid where possible!
+
+---
+
+## TL;DR: Minimise transitions between blocking and async modes
+
+- If you're implementing an async handler API...
+- ...You should stay async as long as possible.
+
+---
+
+## Blocking backend client APIs
+
+- If you're calling a blocking backend client API...
+- ...You should switch to blocking as late as conveniently possible...
+  - Minimizes the chances that you need to switch _back_ to async.
+  - Makes it easier to parallelize blocking calls.
+- ...And think carefully about which threadpool to use.
+
+---
+
+## Calling a non-blocking synchronous method from an async context
+
+- This is fine.
+- Just call the method as normal.
+
+---
+
+## Async types in method signatures
+
+- Returning async types such as `Mono`: good.
+- Taking async types such as `Mono` as method parameters: normally best avoided.
+
+---
+
+- An async method has to return before its work is complete.
+- An async return type such as a `Mono` is a good way of doing that.
+
+---
+
+- Taking an async type such as a `Mono` as a method parameter generally:
+  - Doesn't make life any easier for async callers.
+  - Makes like harder for synchronous callers (e.g. test code).
+  - Complicates implementation.
+- Avoid where possible!
+
+---
+
+## Don't overuse async style
+
+Don't write code in an async style if you don't need to.
+
+---
+
+- If you're implementing a method that takes some arguments...
+- ...and does some non-blocking work on them...
+- ...just write the code normally.
+
+---
+
+- Go to Reactor or whatever when:
+  - You need to call an async API;
+  - Or you need to schedule a blocking API call on another thread.
+
+---
+
+```java
+public Mono<BarDto> fooToBar(FooDto fooDto) {
+  Foo fooBackend = dtoToBackend(fooDto);
+  return backend
+    .fooToBar(fooBackend)
+    .map(Converter::backendToDto);
+}
+```
+
+vs
+
+```java
+public Mono<BarDto> fooToBar(FooDto fooDto) {
+  return Mono.just(fooDto)
+    .map(Converter::dtoToBackend)
+    .flatMap(backend::fooToBar)
+    .map(Converter::backendToDto);
+}
+```
+
+Note: Most people would consider the first of these more readable.
 
 ---
 
