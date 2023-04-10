@@ -920,15 +920,34 @@ This is because the entire chain is assembled before any work is scheduled.
 
 ## Benefits of Reactor
 
-- Programming model is more powerful and more predictable.
+- Programming model is more powerful...
+- ...more predictable...
+- ...and more ergonomic.
 
-TODO: More
+---
+
+## Benefits of Reactor
+
+- Richer API.
+  - Less stuff you have to code by hand.
+
+---
+
+## Benefits of Reactor
+
+- `Flux`:
+  - A `Flux<T>` is more than just a `Mono<List<T>>`.
+  - Async element-by-element processing.
+  - Fancy features like back-pressure.
+- `ParallelFlux`.
 
 ---
 
 ## Downsides of Reactor
 
-TODO: More
+- Programming model is harder to learn.
+- Richer API is harder to learn.
+- More opportunities to shoot yourself in the foot.
 
 ---
 
