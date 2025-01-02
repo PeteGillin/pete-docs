@@ -38,5 +38,23 @@ Things get trickier when we try to figure out what happens for a particle which 
 
 So we have a system much simpler than Norton's where a discontinuity in the boundary conditions causes problems for Newtonian mechanics. There is an important difference , which is that the slope at the apex of Norton's dome _is_ well-definined — it's zero — and so on the dome we can write down and find solutions to the equations of motion. I find that considering the case of the cone makes it less surprising that introducing a different kind of singularity that exists on the dome is still able to cause problems.
 
+## So, _are_ Newtonian mechanics with discontinous boundary conditions deterministic?
+
+I have argued that this question is only of theoretical interest. But I think it _is_ of interest, so let's pursue it a bit further. Norton argues that the answer is 'no'. Some commentators argue, with varying degrees of success, that the answer is 'yes'. Some commentators even seem to argue that the very ideas of non-determinism and non-causality are unphysical, and thus that we can _a priori_ discard such solutions. Spoiler alert: my answer is 'it depends'.
+
+## Newton's first law
+
+One potential line of defence for determinism lies in Newton's first law. There's a passage in Norton's text which leapt out at me on first reading:
+
+> It is natural to visualize "uniform motion in a straight line" over some time interval, but we will need to apply the law at an instant.
+
+He goes on to reformulate the first law accordingly (in such a way that it is just a special case of the second law for _F_ = 0). My immediate reaction is to ask: _why_ do we need to apply the law in this way? One plausible answer is that we need to do so in order to permit the non-trivial solutions. But then we would be in real danger of circular reasoning: we'd have shown that Newtonian mechanics are non-deterministic only when we reformulate one of the laws in a way specifically chosen to allow non-determinism. Perhaps Norton has another, more principled, reason for choosing this restricted application of the first law: if he does, he doesn't give it in this work.
+
+This suggests an alternative analysis: we could apply the first law in the stronger form implied by its normal wording. In the case of Norton's dome, this is enough to eliminate the whole class of non-trivial solutions, and therefore restore determinism and causality.
+
+It is tempting, **but, I believe, unjustified**, to give an answer to the question of determinism along these lines: "It depends. With the narrow, point-in-time version of the first law, Newtonian mechanics are non-deterministic. With the broader version, they are deterministic." Norton has demonstrated the truth of the first half of that claim. But I don't think we can state the second half with confidence. We've shown that the broader version of the first law restores determinism _in this case_, but we haven't shown it in general. And we can't appeal to the uniqueness theorem. So more thought is needed here.
+
+(Aside: Somewhere along this journey, I found myself thinking: If there is really an ambiguity about what Newton's first law means, wouldn't there have been enough of a fuss about that in the last three-hundred-and-some years that I'd have heard about it? I think the resolution of that connundrum is that the two versions are equivalent in the continuous case, and so the difference only emerges when you engineer a situation like this one.)
+
 [Norton]: https://sites.pitt.edu/~jdnorton/Goodies/Dome/index.html
 [Malament]: https://philsci-archive.pitt.edu/3195/1/NortonDome.pdf
