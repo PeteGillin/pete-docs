@@ -56,5 +56,32 @@ It is tempting, **but, I believe, unjustified**, to give an answer to the questi
 
 (Aside: Somewhere along this journey, I found myself thinking: If there is really an ambiguity about what Newton's first law means, wouldn't there have been enough of a fuss about that in the last three-hundred-and-some years that I'd have heard about it? I think the resolution of that connundrum is that the two versions are equivalent in the continuous case, and so the difference only emerges when you engineer a situation like this one.)
 
+## Sliding a particle around the inside of a bowl
+
+I propose another thought experiment. This time, instead of sliding a particle on the outside of a dome, we're going to slide it around the inside of a bowl. (Let's consider a bowl to be any surface which is concave when viewed from above and rotationally symmetric about the vertical axis.)
+
+There is (at least for some bowl shapes) a class of solutions to the equations of motion here which consist of the particle orbiting the vertical axis at constant height. We just need to ensure that the vertical component of the normal force cancels out gravity and that the radial component of the normal force is exactly the centripetal force needed to maintain circular motion. The starting condition needed to achieve such an orbit is that the particle is moving tangentially to the bowl surface, with no vertical component to its velocity, and with the 'correct' speed. That speed is a function of the radius of the orbit (or, equivalently its height, since there is a 1:1 relationship between those things), the gradient of the bowl at that radius, and the gravitational field strength. Start the particle 'too fast' and it will slide up the bowl, and slow down as it does so; start it 'too slow' and it will slide down the bowl and speed up.
+
+Let us now consider the starting point where we start the particle 'too fast' for a constant-height orbit, but also angled up the slope of the bowl. It will slide up the surface of the bowl as it orbits, and slow down. We can choose the initial speed, the initial angle, the initial radius/height, and the shape of the bowl. With a careful choice, we can ensure that, at exactly the height where the vertical component of the velocity drops to zero, the tangential component is that required for a constant-height orbit. The maths to make that choice is not hard, at least in principle: we just apply the conservation of energy — as we did when sliding particles up domes — alongside the conservation of angular momentum, and the appropriate geometry. So it looks like we have a solution where we start out with the particle moving both up and around the slope, and we end up with it transitioning into a constant-height orbit.
+
+Of course, as with the dome experiment, the conservation principles don't give us the full dynamics, and in particular don't tell us whether it will achieve that constant-height orbit in finite time, or just asymptotically approach it.
+
+Again, as with the dome experiement, this question is important when apply the time-reversal trick. If we have a solution where the particle transitions into a constant-height orbit, having not been in such an orbit earlier, with a finite elapsed time, then reversing time gives us a solution where the particle starts in a constant-height orbit and then, seemingly spontaneously, transitions out of it. In fact, it gives us a whole class of such solutions. So, once again, we have non-determinism and non-caussality.
+
+I don't have a direct proof, but I believe that it must therefore be the case that, if the shape of the bowl is continuous, the particle will only asymptotically approach the constant-height orbit (just as, on the dome, the particle only asymptotically approaches the apex). The chain of reasoning is, once again, analogous to that for the dome.
+
+So now we find ourselves asking whether we can arrange things such that the particle transitions into a constant-height orbit in a finite time, thus giving a class of non-causal solutions via time reversal and breaking determinism. I haven't had time to even attempt to construct such shape, but hypothesize that we can.
+
+If we want to rescue determinism, we need to find a way to rule out that class of non-causal solutions. Unfortunately, I don't think that Newton's first law does the job for us here. That talks about particles subject to no net force; our particle, when in its constant-height orbit, is subject to a net force, precisely the centripetal force needed to keep it moving in a circle. And so the first law does not apply.
+
+Instinctively, I find myself wanting to reach for some kind of generalization of the first law which would help. My gut says that, in its constant height orbit, the particle is 'at rest' in the vertical direction, and subject to no net force in the vertical direction, so it should remain at rest in the vertical direction. We have to accept, though, that this isn't what the first law actually says. And it isn't obvious to me exactly how you'd formulate a generalization of the first law that legislates for this gut feeling.
+
+TODO: Write bit on [Gruff Davies][Davies]
+
+TODO: Wrap things up
+
+TODO: Proof
+
 [Norton]: https://sites.pitt.edu/~jdnorton/Goodies/Dome/index.html
 [Malament]: https://philsci-archive.pitt.edu/3195/1/NortonDome.pdf
+[Davies]: https://blog.gruffdavies.com/2017/12/24/newtonian-physics-is-deterministic-sorry-norton/
