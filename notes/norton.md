@@ -30,6 +30,8 @@ Here's the way out of that hole: While conservation of energy tells us that, for
 
 I don't have a direct proof, but it seems clear from chaining together the lines of reasoning we've discussed that the same asymptotic behaviour will be seen on any continuous dome, and that it is the singularity at the apex of Norton's dome which allows that particle to come to rest at the apex in finite time.
 
+TODO: Witter about intuitive understanding of this. Also tighten the text a bit.
+
 ## The case of the cone
 
 There is a related thought experiment which I find interesting, where we replace Norton's dome with a cone. Away from the apex, the equations of motion are high-school level physics, much simpler than Norton's are. We clearly see that there are partial solutions akin to the bottom branch of Norton's non-trivial solutions, i.e. where from a time _T_ onwards the particle is moving down from the apex with increasing speed. Or, to employ the time-reversal trick, we see that we can certainly slide the particle up the cone with the correct velocity to make it come to rest at the apex, and that it will do so in finite time.
@@ -79,6 +81,8 @@ So now we find ourselves asking whether we can arrange things such that the part
 If we want to rescue determinism, we need to find a way to rule out that class of non-causal solutions. Unfortunately, I don't think that Newton's first law does the job for us here. That talks about particles subject to no net force; our particle, when in its constant-height orbit, is subject to a net force, precisely the centripetal force needed to keep it moving in a circle. And so the first law does not apply.
 
 Instinctively, I find myself wanting to reach for some kind of generalization of the first law which would help. My gut says that, in its constant height orbit, the particle is 'at rest' in the vertical direction, and subject to no net force in the vertical direction, so it should remain at rest in the vertical direction. We have to accept, though, that this isn't what the first law actually says. And it isn't obvious to me exactly how you'd formulate a generalization of the first law that legislates for this gut feeling.
+
+TODO: Section this and tighten it up
 
 TODO: Write bit on [Gruff Davies][Davies]
 
