@@ -34,6 +34,8 @@ TODO: Witter about intuitive understanding of this. Also tighten the text a bit.
 
 ## The case of the cone
 
+TODO: Move this above the previous section so that we can refer to it. Remove the time reversal stuff. Say more about the non-well-definedness thing. 
+
 There is a related thought experiment which I find interesting, where we replace Norton's dome with a cone. Away from the apex, the equations of motion are high-school level physics, much simpler than Norton's are. We clearly see that there are partial solutions akin to the bottom branch of Norton's non-trivial solutions, i.e. where from a time _T_ onwards the particle is moving down from the apex with increasing speed. Or, to employ the time-reversal trick, we see that we can certainly slide the particle up the cone with the correct velocity to make it come to rest at the apex, and that it will do so in finite time.
 
 Things get trickier when we try to figure out what happens for a particle which starts at rest on the apex — or one which we slide up the slope and which comes to rest there. Does it stay there? If not, when does it start moving, and in which direction? The equations of motion depend on the slope, and the slope is not well-defined at the apex. So it rather seems as though Newtonian mechanics can't answer these questions. (Again, this is not a problem in practice, since we cannot construct a perfectly pointy cone out of atoms.)
