@@ -16,7 +16,11 @@ I also believe that this restores causality. This follows because, if one soluti
 
 I would argue that, from a practical physics point of view, we lose none of the utility of Newtonian mechanics by restricting its use to situations with continuous boundary condititions. We already know that it is an approximation to reality, and specifically that it does not apply at subatomic scales where quantum effects become important. So, to use Newtonian mechanics, we are replacing real surfaces made out of atoms with idealized ones, and we can just as easily choose a continuous one as a discontinous one.
 
+TODO: Rewrite that to emphasize the importance of atomic structure over qm.
+
 This doesn't mean that it is a dumb question to ask whether Newtonian mechanics really does exhibit the surprising properties that Norton claims. It just means that it is of theoretical interest only.
+
+TODO: Remove that para, cover it below. 
 
 ## On time reversal
 
