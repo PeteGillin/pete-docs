@@ -10,6 +10,8 @@ I include almost no maths in here. So if you're looking for rigorous proofs, you
 
 ## Continuity saves the day
 
+TODO: Throughout, be more careful about saying "continuous".
+
 The most important point to make is that the class of non-trivial solutions to the equations of motion which Norton presents are only possible because his dome has a singularity at its apex. I believe that the fundamental existence and uniqueness theorem for ordinary differential equations guarantees that Newtonian mechanics will be deterministic when the boundary conditions are continuous. I recommend reading [David B Malament][Malament] for more on that.
 
 I also believe that this restores causality. This follows because, if one solution involving spontaneous movement is possible then a whole class of such solutions must be — there is, at least, a degree of freedom in when the movement happens; and in this case there is also a degree of freedom in the direction of the movement — and that would violate uniqueness.
