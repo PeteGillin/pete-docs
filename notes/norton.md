@@ -16,10 +16,6 @@ I also believe that this restores causality. This follows because, if one soluti
 
 I would argue that, from a practical physics point of view, we lose none of the utility of Newtonian mechanics by restricting its use to situations with continuous boundary condititions. If we look sufficiently closely, we find that matter is made out of electrons and nucleons and the like, and that the normal reaction is actually due to the electromagnetic interactions of those particles. The closest we could come to constructing Norton's dome would be to attempt to balance a single atom on the top of a dome made of atoms, and the forces that single atom would feel would be gravitational and electromagnetic — and they would be continous functions of position around the equilibrium point. Or, to look at it another way: idealized models involving pointlike particles and perfectly smooth and hard surfaces are only ever approximations, and we can choose surfaces without awkward singularities without making them any more approximate. (As it happens, we also know that quantum mechanics will become important at subatomic scales, although that's not central to this argument.)
 
-This doesn't mean that it is a dumb question to ask whether Newtonian mechanics really does exhibit the surprising properties that Norton claims. It just means that it is of theoretical interest only.
-
-TODO: Remove that para, cover it below. 
-
 ## On time reversal
 
 The 'time-reversal trick' that Norton describes gets a lot of attention in the commentary, and rightly so since it provides an intuitive way to make his non-trivial solutions seem less surprising. However, there is an important caveat which Norton himself highlights but which many casual readers seem to miss, so I'm going to reiterate it here. This will be important later on.
@@ -44,9 +40,11 @@ Things get trickier when we try to figure out what happens for a particle which 
 
 So we have a system much simpler than Norton's where a singularity in the boundary conditions causes problems for Newtonian mechanics. There is an important difference , which is that the slope at the apex of Norton's dome _is_ well-definined — it's zero — and so on the dome we can write down and find solutions to the equations of motion. I find that considering the case of the cone makes it less surprising that introducing a different kind of singularity that exists on the dome is still able to cause problems.
 
-## So, _are_ Newtonian mechanics with discontinous boundary conditions deterministic?
+## So, _are_ Newtonian mechanics deterministic if we _don't_ require continuity?
 
-I have argued that this question is only of theoretical interest. But I think it _is_ of interest, so let's pursue it a bit further. Norton argues that the answer is 'no'. Some commentators argue, with varying degrees of success, that the answer is 'yes'. Some commentators even seem to argue that the very ideas of non-determinism and non-causality are unphysical, and thus that we can _a priori_ discard such solutions. Spoiler alert: my answer is 'it depends'.
+I have argued that restricting, for practical purposes, it is fine to restrict ourselves to continuous cases, where determinism and causality are secure. That doesn't stop us whether Newton is deterministic and causaul if we drop that restriction. Norton argues that the answer is 'no'. Some commentators argue, with varying degrees of success, that the answer is 'yes'. Some commentators even seem to argue that the very ideas of non-determinism and non-causality are unphysical, and thus that we can _a priori_ discard such solutions. Malament argues that the answer is 'it depends', and I am inclined to agree. The rest of this note will unpack this further.
+
+(Another option is to reject the question as meaningless. In the case of the cone, where we cannot even confidently say what forces apply to the particle on the apex, there is some force to this argument. In the case of the dome, we have forces, and equations we can solve, and it seems that the question of determinism is a reasonable one, if only on the level of a thought experiment.)
 
 ## Newton's first law
 
