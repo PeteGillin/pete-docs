@@ -6,17 +6,15 @@ Norton's Dome is a thought experiment proposed in 2003 by John D Norton, a philo
 
 This page contains my thoughts on the subject. I'll give my view on the claims, and on some of the other responses out there (though I'll only scratch the surface). And I'll share some ideas which I haven't seen elsewhere (though my research has been far from exhaustive).
 
-I include almost no maths in here. So if you're looking for rigorous proofs, you're going to be disappointed, sorry.
+I include almost no maths in here. So if you're looking for rigorous proofs, you're going to be disappointed. Sorry about that.
 
 ## Continuity saves the day
 
-TODO: Throughout, be more careful about saying "continuous".
-
-The most important point to make is that the class of non-trivial solutions to the equations of motion which Norton presents are only possible because his dome has a singularity at its apex. I believe that the fundamental existence and uniqueness theorem for ordinary differential equations guarantees that Newtonian mechanics will be deterministic when the boundary conditions are continuous. I recommend reading [David B Malament][Malament] for more on that.
+The most important point to make is that the class of non-trivial solutions to the equations of motion which Norton presents are only possible because his dome has a singularity at its apex. I believe that the fundamental existence and uniqueness theorem for ordinary differential equations guarantees that Newtonian mechanics will be deterministic when the boundary conditions are sufficiently continuous. I recommend reading [David B Malament][Malament] for more on that. (I am being deliberately vague about what 'sufficiently continuous means as I want to avoid getting bogged down in detail. Again, sorry about that, if it bothers you.)
 
 I also believe that this restores causality. This follows because, if one solution involving spontaneous movement is possible then a whole class of such solutions must be — there is, at least, a degree of freedom in when the movement happens; and in this case there is also a degree of freedom in the direction of the movement — and that would violate uniqueness.
 
-I would argue that, from a practical physics point of view, we lose none of the utility of Newtonian mechanics by restricting its use to situations with continuous boundary condititions. We already know that it is an approximation to reality, and specifically that it does not apply at subatomic scales where quantum effects become important. So, to use Newtonian mechanics, we are replacing real surfaces made out of atoms with idealized ones, and we can just as easily choose a continuous one as a discontinous one.
+I would argue that, from a practical physics point of view, we lose none of the utility of Newtonian mechanics by restricting its use to situations with continuous boundary condititions. We already know that it is an approximation to reality, and specifically that it does not apply at subatomic scales where quantum effects become important. So, to use Newtonian mechanics, we are replacing real surfaces made out of atoms with idealized ones, and we can just as easily choose one without awkward singularities.
 
 TODO: Rewrite that to emphasize the importance of atomic structure over qm.
 
@@ -28,13 +26,13 @@ TODO: Remove that para, cover it below.
 
 The 'time-reversal trick' that Norton describes gets a lot of attention in the commentary, and rightly so since it provides an intuitive way to make his non-trivial solutions seem less surprising. However, there is an important caveat which Norton himself highlights but which many casual readers seem to miss, so I'm going to reiterate it here. This will be important later on.
 
-The gotcha is that the 'time-reversal trick' appears to apply to _any_ dome. We just need to launch the particle up the slope with the right velocity and it will come to rest at the apex. (That velocity is √( 2 _g_ _h_ ) where _g_ is the gravitational field strenght and _h_ the vertical distance we're starting below the apex. I mention this not because the formula is important, but to show that it can be easily deduced from the conservation of energy in a way that is indepenedent of the shape of the dome.) And yet many domes do not have anything like Norton's non-trivial solutions — in particular, continuous ones do not. So there must be something more to this time-reversal gag than meets the eye.
+The gotcha is that the 'time-reversal trick' appears to apply to _any_ dome. We just need to launch the particle up the slope with the right velocity and it will come to rest at the apex. (That velocity is √( 2 _g_ _h_ ) where _g_ is the gravitational field strenght and _h_ the vertical distance we're starting below the apex. I mention this not because the formula is important, but to show that it can be easily deduced from the conservation of energy in a way that is indepenedent of the shape of the dome.) And yet many domes do not have anything like Norton's non-trivial solutions — in particular, sufficiently continuous ones do not. So there must be something more to this time-reversal gag than meets the eye.
 
 Here's the way out of that hole: While conservation of energy tells us that, for the correct starting velocity, a state where the particle is at rest at the apex of the dome is possible, it does not fully provide the dynamics of how it will reach that equilibrium state (although it does tell us that the particle must slow down as it climbs). If we run the equations of motion on, say, the surface of a hemispherical dome, we find that the particle asymptotically approaches the apex, but it does not reach it in any finite time. When we reverse the direction of time, we therefore see that if the particle starts at rest on the apex of a hemispherical dome it will never move away from it (by any finite distance) in any finite time.
 
 (To reiterate for clarity: All the above is discussed by Norton.)
 
-I don't have a direct proof, but it seems clear from chaining together the lines of reasoning we've discussed that the same asymptotic behaviour will be seen on any continuous dome, and that it is the singularity at the apex of Norton's dome which allows that particle to come to rest at the apex in finite time.
+I don't have a direct proof, but it seems clear from chaining together the lines of reasoning we've discussed that the same asymptotic behaviour will be seen on any sufficiently continuous dome, and that it is the singularity at the apex of Norton's dome which allows that particle to come to rest at the apex in finite time.
 
 TODO: Witter about intuitive understanding of this. Also tighten the text a bit.
 
@@ -46,7 +44,7 @@ There is a related thought experiment which I find interesting, where we replace
 
 Things get trickier when we try to figure out what happens for a particle which starts at rest on the apex — or one which we slide up the slope and which comes to rest there. Does it stay there? If not, when does it start moving, and in which direction? The equations of motion depend on the slope, and the slope is not well-defined at the apex. So it rather seems as though Newtonian mechanics can't answer these questions. (Again, this is not a problem in practice, since we cannot construct a perfectly pointy cone out of atoms.)
 
-So we have a system much simpler than Norton's where a discontinuity in the boundary conditions causes problems for Newtonian mechanics. There is an important difference , which is that the slope at the apex of Norton's dome _is_ well-definined — it's zero — and so on the dome we can write down and find solutions to the equations of motion. I find that considering the case of the cone makes it less surprising that introducing a different kind of singularity that exists on the dome is still able to cause problems.
+So we have a system much simpler than Norton's where a singularity in the boundary conditions causes problems for Newtonian mechanics. There is an important difference , which is that the slope at the apex of Norton's dome _is_ well-definined — it's zero — and so on the dome we can write down and find solutions to the equations of motion. I find that considering the case of the cone makes it less surprising that introducing a different kind of singularity that exists on the dome is still able to cause problems.
 
 ## So, _are_ Newtonian mechanics with discontinous boundary conditions deterministic?
 
@@ -80,7 +78,7 @@ Of course, as with the dome experiment, the conservation principles don't give u
 
 Again, as with the dome experiement, this question is important when apply the time-reversal trick. If we have a solution where the particle transitions into a constant-height orbit, having not been in such an orbit earlier, with a finite elapsed time, then reversing time gives us a solution where the particle starts in a constant-height orbit and then, seemingly spontaneously, transitions out of it. In fact, it gives us a whole class of such solutions. So, once again, we have non-determinism and non-caussality.
 
-I don't have a direct proof, but I believe that it must therefore be the case that, if the shape of the bowl is continuous, the particle will only asymptotically approach the constant-height orbit (just as, on the dome, the particle only asymptotically approaches the apex). The chain of reasoning is, once again, analogous to that for the dome.
+I don't have a direct proof, but I believe that it must therefore be the case that, if the shape of the bowl is sufficiently continuous, the particle will only asymptotically approach the constant-height orbit (just as, on the dome, the particle only asymptotically approaches the apex). The chain of reasoning is, once again, analogous to that for the dome.
 
 (I have sketched out maths and confirmed this to my satisfaction for one specific continuous bowl. The maths isn't fit to be published, so I'm not including it. Once again, sorry.)
 
