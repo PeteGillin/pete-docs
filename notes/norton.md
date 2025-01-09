@@ -16,6 +16,20 @@ I also believe that this restores causality. This follows because, if one soluti
 
 I would argue that, from a practical physics point of view, we lose none of the utility of Newtonian mechanics by restricting its use to situations with continuous boundary condititions. If we look sufficiently closely, we find that matter is made out of electrons and nucleons and the like, and that the normal reaction is actually due to the electromagnetic interactions of those particles. The closest we could come to constructing Norton's dome would be to attempt to balance a single atom on the top of a dome made of atoms, and the forces that single atom would feel would be gravitational and electromagnetic — and they would be continous functions of position around the equilibrium point. Or, to look at it another way: idealized models involving pointlike particles and perfectly smooth and hard surfaces are only ever approximations, and we can choose surfaces without awkward singularities without making them any more approximate. (As it happens, we also know that quantum mechanics will become important at subatomic scales, although that's not central to this argument.)
 
+## The case of the cone
+
+There is a related thought experiment which I find interesting, where we replace Norton's dome with a cone.
+
+Away from the apex, the equations of motion are high-school level physics. There are partial solutions akin to the bottom branch of Norton's non-trivial solutions: the distance from the apex at time _t_ is proportional to (_t_ - _T_)<sup>2</sup> for _t_ > _T_ and some arbitrary choice of _T_.
+
+If we also had partial solutions akin to the top branch of Norton's non-trivial solutions, where the particle remains at the apex for _t_ < _T_, then we would have shown determinism just like Norton does (and with significantly simpler maths). But we run into a problem here: The equations of motion of a point sliding on a slope depend on its gradient, and the gradient is not well-defined at the apex of a cone. So it rather seems as though we can't answer the question of what happens if we try to balance a particle there.
+
+It's worth being clear about the exact nature of the problem here. There's nothing wrong with Newton's laws of motion: _F_ still equals _m_ _a_. It's the boundary conditions where we come unstuck. Specifically, our thought experiments involve a perfectly smooth and hard surface, which provide a normal force of exactly the magnitude required to prevent the particle penetrating it — but there is no well-defined normal at the apex of a cone. So the process by which we figure out what forces to put into our force diagram deosn't work.
+
+(Some readers may want to argue that the force must be straight up, appealing to symmetry. I'm not sure how I feel about that. We can sidestep it by imagining a sheered cone which is asymmetric.)
+
+There is an important difference between the cone and Norton's dome: The gradient at the apex of the dome _is_ well-definined — it's zero — and so we can write down and find solutions to the equations of motion. The novel point we learn from Norton is that a gradient which is well-defined but whose rate of change diverges is enough to cause us problems with determinism.
+
 ## On time reversal
 
 The 'time-reversal trick' that Norton describes gets a lot of attention in the commentary, and rightly so since it provides an intuitive way to make his non-trivial solutions seem less surprising. However, there is an important caveat which Norton himself highlights but which many casual readers seem to miss, so I'm going to reiterate it here. This will be important later on.
@@ -29,16 +43,6 @@ Here's the way out of that hole: While conservation of energy tells us that, for
 I don't have a direct proof, but it seems clear from chaining together the lines of reasoning we've discussed that the same asymptotic behaviour will be seen on any sufficiently continuous dome, and that it is the singularity at the apex of Norton's dome which allows that particle to come to rest at the apex in finite time.
 
 TODO: Witter about intuitive understanding of this. Also tighten the text a bit.
-
-## The case of the cone
-
-TODO: Move this above the previous section so that we can refer to it. Remove the time reversal stuff. Say more about the non-well-definedness thing. 
-
-There is a related thought experiment which I find interesting, where we replace Norton's dome with a cone. Away from the apex, the equations of motion are high-school level physics, much simpler than Norton's are. We clearly see that there are partial solutions akin to the bottom branch of Norton's non-trivial solutions, i.e. where from a time _T_ onwards the particle is moving down from the apex with increasing speed. Or, to employ the time-reversal trick, we see that we can certainly slide the particle up the cone with the correct velocity to make it come to rest at the apex, and that it will do so in finite time.
-
-Things get trickier when we try to figure out what happens for a particle which starts at rest on the apex — or one which we slide up the slope and which comes to rest there. Does it stay there? If not, when does it start moving, and in which direction? The equations of motion depend on the slope, and the slope is not well-defined at the apex. So it rather seems as though Newtonian mechanics can't answer these questions. (Again, this is not a problem in practice, since we cannot construct a perfectly pointy cone out of atoms.)
-
-So we have a system much simpler than Norton's where a singularity in the boundary conditions causes problems for Newtonian mechanics. There is an important difference , which is that the slope at the apex of Norton's dome _is_ well-definined — it's zero — and so on the dome we can write down and find solutions to the equations of motion. I find that considering the case of the cone makes it less surprising that introducing a different kind of singularity that exists on the dome is still able to cause problems.
 
 ## So, _are_ Newtonian mechanics deterministic if we _don't_ require continuity?
 
