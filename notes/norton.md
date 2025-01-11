@@ -2,9 +2,7 @@
 
 ## Introduction
 
-TODO: remove stuff about causality, it's a distraction 
-
-Norton's Dome is a thought experiment proposed in 2003 by John D Norton, a philosopher of physics. It purports to show that Newtonian mechanics exhibit both non-determinism and non-causality. If you're not familiar with it, I recommend reading the write-up on [write-up on his site][Norton]. It's short and accessible.
+Norton's Dome is a thought experiment proposed in 2003 by John D Norton, a philosopher of physics. It purports to show that Newtonian mechanics exhibit non-determinism. If you're not familiar with it, I recommend reading the write-up on [write-up on his site][Norton]. It's short and accessible.
 
 This page contains my thoughts on the subject. I'll give my view on the claims, and on some of the other responses out there (though I'll only scratch the surface). And I'll share some ideas which I haven't seen elsewhere (though my research has been far from exhaustive).
 
@@ -13,8 +11,6 @@ I include almost no maths in here. So if you're looking for rigorous proofs, you
 ## Continuity saves the day
 
 The most important point to make is that the class of non-trivial solutions to the equations of motion which Norton presents are only possible because his dome has a singularity at its apex. I believe that the fundamental existence and uniqueness theorem for ordinary differential equations guarantees that Newtonian mechanics will be deterministic when the boundary conditions are sufficiently continuous. I recommend reading [David B Malament][Malament] for more on that. (I am being deliberately vague about what 'sufficiently continuous means as I want to avoid getting bogged down in detail. Again, sorry about that, if it bothers you.)
-
-I also believe that this restores causality. This follows because, if one solution involving spontaneous movement is possible then a whole class of such solutions must be — there is, at least, a degree of freedom in when the movement happens; and in this case there is also a degree of freedom in the direction of the movement — and that would violate uniqueness.
 
 I would argue that, from a practical physics point of view, we lose none of the utility of Newtonian mechanics by restricting its use to situations with continuous boundary condititions. If we look sufficiently closely, we find that matter is made out of electrons and nucleons and the like, and that the normal reaction is actually due to the electromagnetic interactions of those particles. The closest we could come to constructing Norton's dome would be to attempt to balance a single atom on the top of a dome made of atoms, and the forces that single atom would feel would be gravitational and electromagnetic — and they would be continous functions of position around the equilibrium point. Or, to look at it another way: idealized models involving pointlike particles and perfectly smooth and hard surfaces are only ever approximations, and we can choose surfaces without awkward singularities without making them any more approximate. (As it happens, we also know that quantum mechanics will become important at subatomic scales, although that's not central to this argument.)
 
@@ -48,7 +44,7 @@ For what it's worth, I find myself just about able to intuitively understand why
 
 ## So, _are_ Newtonian mechanics deterministic if we _don't_ require continuity?
 
-I have argued that restricting, for practical purposes, it is fine to restrict ourselves to continuous cases, where determinism and causality are secure. That doesn't stop us whether Newton is deterministic and causaul if we drop that restriction. Norton argues that the answer is 'no'. Some commentators argue, with varying degrees of success, that the answer is 'yes'. Some commentators even seem to argue that the very ideas of non-determinism and non-causality are unphysical, and thus that we can _a priori_ discard such solutions. Malament argues that the answer is 'it depends', and I am inclined to agree. The rest of this note will unpack this further.
+I have argued that restricting, for practical purposes, it is fine to restrict ourselves to continuous cases, where determinism is secure. That doesn't stop us whether Newton is deterministic if we drop that restriction. Norton argues that the answer is 'no'. Some commentators argue, with varying degrees of success, that the answer is 'yes'. Some commentators even seem to argue that the very idea of non-determinism is unphysical, and thus that we can _a priori_ discard such solutions. Malament argues that the answer is 'it depends', and I am inclined to agree. The rest of this note will unpack this further.
 
 (Another option is to reject the question as meaningless. In the case of the cone, where we cannot even confidently say what forces apply to the particle on the apex, there is some force to this argument. In the case of the dome, we have forces, and equations we can solve, and it seems that the question of determinism is a reasonable one, if only on the level of a thought experiment.)
 
@@ -60,7 +56,7 @@ One potential line of defence for determinism lies in Newton's first law. There'
 
 He goes on to reformulate the first law accordingly (in such a way that it is just a special case of the second law for _F_ = 0). My immediate reaction is to ask: _why_ do we "need" to apply the law in this way? One plausible answer is that we need to do so in order to permit the non-trivial solutions. But then we would be in real danger of circular reasoning: we'd have shown that Newtonian mechanics are non-deterministic only when we reformulate one of the laws in a way specifically chosen to allow non-determinism. Perhaps Norton has another, more principled, reason for choosing this restricted application of the first law: if he does, he doesn't give it in this work.
 
-This suggests an alternative analysis: we could apply the first law in the stronger form implied by its normal wording. In the case of Norton's dome, this is enough to eliminate the whole class of non-trivial solutions, and therefore restore determinism and causality.
+This suggests an alternative analysis: we could apply the first law in the stronger form implied by its normal wording. In the case of Norton's dome, this is enough to eliminate the whole class of non-trivial solutions, and therefore restore determinism.
 
 It is tempting, **but, I believe, unjustified**, to give an answer to the question of determinism along these lines: "It depends. With the narrow, point-in-time version of the first law, Newtonian mechanics are non-deterministic. With the broader version, they are deterministic." Norton has demonstrated the truth of the first half of that claim. But I don't think we can state the second half with confidence. We've shown that the broader version of the first law restores determinism _in this case_, but we haven't shown it in general. And we can't appeal to the uniqueness theorem. So more thought is needed here.
 
@@ -78,15 +74,15 @@ Let us now consider the starting point where we start the particle 'too fast' fo
 
 Of course, as with the dome experiment, the conservation principles don't give us the full dynamics, and in particular don't tell us whether it will achieve that constant-radius orbit in finite time, or just asymptotically approach it.
 
-Again, as with the dome experiement, this question is important when apply the time-reversal trick. If we have a solution where the particle transitions into a constant-radius orbit, having not been in such an orbit earlier, with a finite elapsed time, then reversing time gives us a solution where the particle starts in a constant-radius orbit and then, seemingly spontaneously, drops out of it. In fact, it gives us a whole class of such solutions. So, once again, we have non-determinism and non-caussality.
+Again, as with the dome experiement, this question is important when apply the time-reversal trick. If we have a solution where the particle transitions into a constant-radius orbit, having not been in such an orbit earlier, with a finite elapsed time, then reversing time gives us a solution where the particle starts in a constant-radius orbit and then, seemingly spontaneously, drops out of it. In fact, it gives us a whole class of such solutions. So, once again, we have non-determinism.
 
 I don't have a direct proof, but I believe that it must therefore be the case that, if the shape of the bowl is sufficiently continuous, the particle will only asymptotically approach the constant-radius orbit (just as, on the dome, the particle only asymptotically approaches the apex). The chain of reasoning is, once again, analogous to that for the dome.
 
 (I have sketched out maths for one specific continuous bowl and confirmed to my satisfaction that this asymptotic approach occurs. The maths isn't fit to be published, so I'm not including it. Once again, sorry.)
 
-So now we find ourselves asking whether, if we are allow the bowl's gradient's rate of change to diverge, we can arrange things such that the particle transitions into a constant-radius orbit in a finite time, thus giving a class of non-causal solutions via time reversal and breaking determinism. I haven't had time to even attempt to construct such shape, but hypothesize that we can.
+So now we find ourselves asking whether, if we are allow the bowl's gradient's rate of change to diverge, we can arrange things such that the particle transitions into a constant-radius orbit in a finite time, thus giving a class of solutions where the particle spontaneously falls out of orbit via time reversal and breaking determinism. I haven't had time to even attempt to construct such shape, but hypothesize that we can.
 
-Suppose that my hypothesis is correct. If we want to rescue determinism, we need to find a way to rule out that class of non-causal solutions. Unfortunately, I don't think that Newton's first law does the job for us here. That talks about particles subject to no net force; our particle, when in its constant-height orbit, is subject to a net force, precisely the centripetal force needed to keep it moving in a circle. And so the first law does not apply.
+Suppose that my hypothesis is correct. If we want to rescue determinism, we need to find a way to rule out that class solutions. Unfortunately, I don't think that Newton's first law does the job for us here. That talks about particles subject to no net force; our particle, when in its constant-height orbit, is subject to a net force, precisely the centripetal force needed to keep it moving in a circle. And so the first law does not apply.
 
 Instinctively, I find myself wanting to reach for some kind of generalization of the first law which would help. My gut says that, in its constant-radius orbit, the particle is 'at rest' in the radial direction, and subject to no net force in that direction, so it should remain at rest in that direction. We have to accept, though, that this isn't what the first law actually says. And it isn't obvious to me exactly how you'd formulate a generalization of the first law that legislates for this gut feeling.
 
