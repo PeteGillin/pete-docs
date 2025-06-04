@@ -68,9 +68,25 @@ This version of the thought experiment also has a significant disadvantage, howe
 
 The key thing that distinguishes Norton's Dome from the cone is that the Dome _does_ have a well-defined gradient at the peak, and therefore that we can write down the equaitions there. Norton shows that it's enough for the rate of change of the gradient to diverge to cause problems for determinism.
 
-## And what about swirling an object in a bowl?
+## Does Newton's First Law rescue determinism?
 
-Now suppose that, instead of sliding an object on the outside of a dome, we are sliding it on the inside of a bowl. And also suppose that, instead of starting it at rest at the apex, we are starting it at some point away from the bottom/centre, with a non-zero velocity which has a component pointing around the bowl, and may have a component up or down the slope. That is, the object is swirling around the inside of the bowl.
+No, I don't think so, although not for the reasons that Norton gives.
+
+The First Law is normally stated something like this: "A body which is subject to no net force remains at rest, or in uniform motion in a straight line." This provides a potential line of defence for determinism in the case of the Dome. After all, the object starts at rest, and is subject to no net force, so it should remain at rest.
+
+Norton rejects this. There's a passage in his text which leapt out at me on first reading:
+
+> It is natural to visualize "uniform motion in a straight line" over some time interval, but we will need to apply the law at an instant.
+
+He goes on to reformulate the First Law accordingly, in such a way that it is just a special case of the second law where the force is zero. My immediate reaction is to ask: _why_ do we "need" to apply the law in this way? As far as I can see, he gives no justification. Maybe we _can_ apply it over some time interval, as Norton concedes is "natural", and reject his spontaneous motion solutions on that basis.
+
+So, which version of the first is correct, the "over some time interval" one which rescues determinism in the case of the Dome and the cone, or the "at an instant" one which doesn't? Well, in the continuous case, I believe they are the same thing. And I believe that there is no practical physics reason to consider the discontinuous case where they differ. So the question makes no sense in practical physics. As a thought experiment, well, you can take your pick.
+
+But despite that, I still think the First Law doesn't save determinism, and this is where swirling an object in a bowl comes in.
+
+## Okay, I'll bite again: what's this about swirling an object in a bowl?
+
+Suppose that, instead of sliding an object on the outside of a dome, we are sliding it on the inside of a bowl. And also suppose that, instead of starting it at rest at the apex, we are starting it at some point away from the bottom/centre, with a non-zero velocity which has a component pointing around the bowl, and may have a component up or down the slope. That is, the object is swirling around the inside of the bowl.
 
 (All our bowls are going to have rotational symmetry.)
 
@@ -84,21 +100,9 @@ I assert that, for a sufficiently continuous bowl, the object will only asymptot
 
 I also believe that, for a discontinous bowl, the object can reach the orbital solution in finite time, and therefore we do really have non-deterministic solutions. I don't have any proof of this, and I haven't even tried to construct a bowl of a suitable shape. This belief is only based on intuition. (I am very sorry.)
 
-## Does Newton's First Law rescue determinism?
+## And what's the this got to do with Newton's First Law and determinism?
 
-No, I don't think so, although not for the reasons that Norton gives.
-
-The First Law is normally stated something like this: "A body which is subject to no net force remains at rest, or in uniform motion in a straight line." This provides a potential line of defence for determinism in the case of the Dome. After all, the object starts at rest, and is subject to no net force, so it should remain at rest.
-
-Norton rejects this. There's a passage in his text which leapt out at me on first reading:
-
-> It is natural to visualize "uniform motion in a straight line" over some time interval, but we will need to apply the law at an instant.
-
-He goes on to reformulate the first law accordingly, in such a way that it is just a special case of the second law where the force is zero. My immediate reaction is to ask: _why_ do we "need" to apply the law in this way? As far as I can see, he gives no justification. Maybe we _can_ apply it over some time interval, as Norton concedes is "natural", and reject his spontaneous motion solutions on that basis.
-
-An aside: At first glance, it seems startling that there should be two rival ways of interpreting something as basic as Newton's First Law and that it hasn't been a big deal until now. However, I'd assert that, with continuous boundary conditions, the two interpretations become identical. So there is no practical physical situation where the distinction is meaningful.
-
-Given this ambiguity, why have I asserted that the First Law does _not_ rescue determinism? This is where the object swirling in the bowl comes into its own. Although I have not proved it, I believe that there are solutions where the object can spontaneously fall out of orbit — and, while in orbit, it was subject to a net force (and so is neither at rest nor in uniform motion in a straight line) and so the First Law does not apply.
+Let's suppose that I am right, and that there are solutions to the swirling inside a bowl scenario where the object is started off in such a way that it transitions into an orbital solution in finite time, and so that there are non-deterministic solutions where it spontaneously falls out of orbit. While in orbit, it was subject to a net force (and so is neither at rest nor in uniform motion in a straight line). This means that the First Law does not apply. So we can't rely on it to exclude those solutions.
 
 ## Can we add to Newton's Laws in a way that restores determinism?
 
